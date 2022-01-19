@@ -1,0 +1,37 @@
+<% include ../partials/header %>
+
+
+
+<div class="container">
+    <header class="jumbotron">
+        <div class="container">
+            <h1><i class="fas fa-utensils"></i> Welcome To Get your Recipe!</h1>
+            <p>A place for people to share their recipes with everyone</p>
+            <p>
+             <a  class="btn btn-primary btn-lg" href="/j_foods/new">Add a new recipe</a>   
+            </p>
+        </div>
+    </header>
+    
+        <div class="row" style="display:flex; flex-wrap: wrap">
+            <% j_foods.forEach(function(j_food){%>
+                <div class="col-lg-9 col-md-9 col-sm-9 col-centered">
+                    <div class="thumbnail">
+                         <img src="<%= j_food.image %>">
+                         <div class="caption">
+                            <h4><%= j_food.name %></h4>
+                         </div>
+                         <p>
+                             click here to get indgredients and steps.
+                             <a href="/j_foods/<%= j_food._id%>" class="btn btn-primary">More Info</a></a>
+                         </p>
+                    </div>
+                </div>
+            <% }) %>
+        </div>
+</div>
+
+<% include ../partials/footer %>
+
+
+
